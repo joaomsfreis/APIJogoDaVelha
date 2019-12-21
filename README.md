@@ -16,7 +16,7 @@ Para instalar as dependências e executar o projeto, além de abrir o terminal n
 
 ### Com o yarn instalado
 
-Deve-se executar os seguintes comando no terminal:
+Deve-se executar os seguintes comandos no terminal:
 
 ```
 > yarn install
@@ -26,7 +26,7 @@ Deve-se executar os seguintes comando no terminal:
 
 ### Com o npm instalado
 
-Deve-se executar os seguintes comando no terminal:
+Deve-se executar os seguintes comandos no terminal:
 
 ```
 > npm i
