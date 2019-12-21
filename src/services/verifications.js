@@ -21,18 +21,35 @@ module.exports = {
             gameById = JSON.parse(readGame()).filter(res => {
                 return res.id === idParams
             })
-        }catch(e){
-            
-        }
+        }catch(e){}
 
         return gameById.length !== 0 && idParams === idBody
     },
 
     filledPosition(file, move){
         const fileById = filterMoveByID(file, move.id)
-        const {x, y} = fileById[fileById.length-1].position
+        const filterByPosition = fileById.filter(res => {
+            return (res.position.x === move.position.x && res.position.y === move.position.y)
+        })
 
-        return !(x === move.position.x && y === move.position.y)
+        return filterByPosition.length === 0
+    },
+
+    validPosition(move){
+        const {x, y} = move.position
+        return (x <= 2 && x >= 0 && y <= 2 && x >= 0)
+    },
+
+    initialTurn(idParams, move){
+        let gameById = []
+        
+        try{
+            gameById = JSON.parse(readGame()).filter(res => {
+                return res.id === idParams
+            })
+        }catch(e){}
+
+        return gameById[0].firstPlayer === move.player && idParams === move.id
     }
 
 
