@@ -6,7 +6,7 @@ const routes = express.Router()
 
 
 routes.post('/game', GameController.store)
-routes.post('/game/:id/moviment', MoveController.store)
+routes.post('/game/:id/movement', MoveController.store)
 
 module.exports = routes
 
