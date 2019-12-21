@@ -15,7 +15,7 @@ module.exports = {
             isTurn = yourTurn(file, req.body)
             position = filledPosition(file, req.body)
         }catch(e){
-            isTurn = initialTurn(req.params.id, req.body)
+            if (valid) isTurn = initialTurn(req.params.id, req.body)
         }
 
         
@@ -28,21 +28,23 @@ module.exports = {
                     const finalMsg = finish(moves, req.params.id)
 
                     if(!finalMsg){
-                        res.status(200).json({teste: "teste"})              
+                        res.status(200).json({
+                            msg: "Posição preenchida."
+                        })              
                     }else {
                         res.status(200).json(finalMsg)
                     }
                     
-                }else res.json({
+                }else res.status(400).json({
                     msg: "Posição já preenchida ou inválida"
                 })
             }else{
-                return res.json({
+                return res.status(400).json({
                     msg: "Não é turno do jogador"
                 })
             }
         }else{
-            return res.json({
+            return res.status(400).json({
                 msg: "Partida não encotrada"
             })
         }

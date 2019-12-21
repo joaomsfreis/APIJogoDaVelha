@@ -6,7 +6,7 @@ module.exports = {
     saveGame(game){
         fs.writeFile(fileGames, game, function(err){
             if(err){
-                return console.log(err)
+                console.log(err)
             }
         })
     },
@@ -19,7 +19,7 @@ module.exports = {
     saveMove(move){
         fs.writeFile(fileMoves, move, function(err){
             if(err){
-                return console.log(err)
+                console.log(err)
             }
         })
     },

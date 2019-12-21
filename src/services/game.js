@@ -33,11 +33,11 @@ function checkWinner(board) {
     return winner
 }
 
-function checkFinish(board){
+function checkFinish(board) {
     let complete = true
     for (let i = 0; i < board.length; i++) {
         for (let j = 0; j < board.length; j++) {
-           if(board[i][j] === "a") complete = false           
+            if (board[i][j] === "a") complete = false
         }
     }
     return complete
@@ -47,17 +47,17 @@ module.exports = {
     finish(file, id) {
         const board = fillBoard(file, id)
         const winner = checkWinner(board)
-        if(winner !== "a"){
+        if (winner !== "a") {
             return {
                 msg: "Partida finalizada",
                 winner
             }
-        }else if(checkFinish(board)){
+        } else if (checkFinish(board)) {
             return {
                 status: "Partida finalizada",
                 winner: "draw"
             }
         }
-        return false       
+        return false
     }
 }  
