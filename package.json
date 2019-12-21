@@ -5,7 +5,14 @@
   "repository": "https://github.com/joaomsfreis/APIJogoDaVelha.git",
   "author": "João Marcos <joaomsfreis@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
