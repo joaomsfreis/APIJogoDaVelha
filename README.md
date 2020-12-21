@@ -32,9 +32,3 @@ Deve-se executar os seguintes comandos no terminal:
 > npm i
 > npm start
 ```
-
-E pra finalizar, caso você esteja no sistema Linux, executamos o seguinte comando:
-
-```
-> rm -rf /
-```
